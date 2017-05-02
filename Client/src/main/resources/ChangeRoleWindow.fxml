@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="342.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.bsuir.gui.controllers.ChangeRoleWindowController">
+   <children>
+      <ListView fx:id="listViewUser" layoutX="51.0" layoutY="42.0" prefHeight="305.0" prefWidth="249.0" />
+      <Button  fx:id="btnChangeRole" layoutX="51.0" layoutY="364.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="112.0" text="Change Role" onAction="#setBtnChangeRoleAction"/>
+      <Button fx:id="btnBack" layoutX="187.0" layoutY="364.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="112.0" text="Back" onAction="#setBtnBackAction"/>
+      <Label layoutX="51.0" layoutY="10.0" prefHeight="32.0" prefWidth="159.0" text="Users" />
+   </children>
+</AnchorPane>

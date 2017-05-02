@@ -1,5 +1,6 @@
 package by.bsuir.models.response.implementations;
 
+import by.bsuir.models.enumKinds.eResponse.EResponse;
 import by.bsuir.models.response.interfaces.Response;
 
 import java.io.Serializable;
@@ -8,27 +9,29 @@ import java.io.Serializable;
  * Created by Сергей on 15.04.2017.
  */
 public class ServerResponse implements Response,Serializable {
-    private String nameOfResponse;
+    /**kind of response*/
+    private EResponse nameOfResponse;
 
-    private String xmlParseDoc;
+    /**Data of response*/
+    private Object data;
 
     @Override
-    public String getResponse() {
-        return xmlParseDoc;
+    public Object getResponseInfo() {
+        return data;
     }
 
     @Override
-    public void setResponse(String xmlParseDoc) {
-        this.xmlParseDoc = xmlParseDoc;
+    public void setResponseInfo(Object xmlParseDoc) {
+        this.data = xmlParseDoc;
     }
 
     @Override
-    public String getNameOfResponse() {
+    public EResponse getNameOfResponse() {
         return nameOfResponse;
     }
 
     @Override
-    public void setNameOfResponse(String nameOfResponse) {
+    public void setNameOfResponse(EResponse nameOfResponse) {
         this.nameOfResponse = nameOfResponse;
     }
 }

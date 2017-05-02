@@ -1,14 +1,20 @@
 package by.bsuir.models.response.interfaces;
 
+import by.bsuir.models.enumKinds.eResponse.EResponse;
+
 /**
  * Created by Сергей on 15.04.2017.
  */
 public interface Response {
-    String getNameOfResponse();
+    /**
+     * Get Kind of Response from server Response
+     * @return Kind of Response
+     */
+    EResponse getNameOfResponse();
 
-    void setNameOfResponse(String nameOfResponse);
+    void setNameOfResponse(EResponse nameOfResponse);
 
-    String getResponse();
+    Object getResponseInfo();
 
-    void setResponse(String xmlParseDoc);
+    void setResponseInfo(Object xmlParseDoc);
 }

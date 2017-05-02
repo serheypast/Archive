@@ -1,4 +1,4 @@
-package by.bsuir.models.socket.interfaces;
+package by.bsuir.socket.interfaces;
 
 /**
  * Created by Сергей on 15.04.2017.

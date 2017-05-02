@@ -1,4 +1,4 @@
-package by.bsuir.client.gui.registerWindow;
+package by.bsuir.gui.registerWindow;
 
 
 import javafx.geometry.Insets;
@@ -62,12 +62,13 @@ public class RegisterWindow {
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
+        setErrorText();
         setRegistrerText();
         setLoginField();
         setPasswordField_1();
         setPasswordField_2();
         sethBox();
-        setErrorText();
+
 
     }
 

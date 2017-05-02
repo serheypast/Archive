@@ -1,5 +1,16 @@
-package by.bsuir.client.gui.registerWindow;
+package by.bsuir.gui.registerWindow;
 
+import by.bsuir.XMLParsers.implementations.ParserDaoSingleton;
+import by.bsuir.gui.loginWindow.LoginWindow;
+import by.bsuir.models.enumKinds.eRequest.ERequest;
+import by.bsuir.models.enumKinds.eRole.Role;
+import by.bsuir.models.enumKinds.eType.TypeXml;
+import by.bsuir.models.parseData.implementations.ParseDataDao;
+import by.bsuir.models.parseData.interfaces.ParseData;
+import by.bsuir.models.request.implementations.ClientRequest;
+import by.bsuir.models.response.implementations.ServerResponse;
+import by.bsuir.socket.implementations.SocketDaoSingleton;
+import by.bsuir.models.user.implementations.UserDao;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -16,7 +27,41 @@ public class RegisterWindowController {
      * @param registerWindow
      */
     public static void setOnActionButtonOk(final RegisterWindow registerWindow){
+        registerWindow.buttonOk.setOnAction(new EventHandler<ActionEvent>() {
 
+            @Override
+            public void handle(ActionEvent e) {
+                if (checkField(registerWindow)) {
+                    UserDao userDao = new UserDao();
+                    userDao.setName(registerWindow.loginField.getText());
+                    userDao.setPassword(registerWindow.passwordField_1.getText());
+                    userDao.setRole(Role.USER);
+
+                    ClientRequest clientRequest = new ClientRequest();
+                    clientRequest.setNameOfRequest(ERequest.ADD_USER);
+                    ParseData parseData = new ParseDataDao();
+                    parseData.setType(TypeXml.USER);
+                    parseData.setData(userDao);
+                    String xmlDoc = ParserDaoSingleton.getParser().getCurrentParser().parseToXml(parseData);
+                    clientRequest.setRequest(xmlDoc);
+                    SocketDaoSingleton.getSocketSingelton().sendMessage(clientRequest);
+                    ServerResponse response = (ServerResponse) SocketDaoSingleton.getSocketSingelton().getMessage();
+                    switch (response.getNameOfResponse()) {
+                        case USER_NOT_EXIST:
+                            registerWindow.errorText.setText("User with this name already exists");
+                            break;
+                        case REQUEST_COMPLETE:
+                            registerWindow.stage.setScene((new LoginWindow(registerWindow.stage).getScene()));
+                            break;
+                        default:
+                            registerWindow.errorText.setText("User with this name already exists");
+                            break;
+                    }
+                } else {
+                    registerWindow.errorText.setText("Your entered data is incorrect");
+                }
+            }
+        });
     }
 
     /**
@@ -25,8 +70,15 @@ public class RegisterWindowController {
      * @param registerWindow
      */
     public static void setOnActionButtonBack(final RegisterWindow registerWindow){
+        registerWindow.buttonBack.setOnAction(new EventHandler<ActionEvent>() {
 
+            @Override
+            public void handle(ActionEvent e) {
+                registerWindow.stage.setScene((new LoginWindow(registerWindow.stage).getScene()));
+            }
+        });
     }
+
 
     /**
      * Check login in data base

@@ -5,20 +5,22 @@ import by.bsuir.models.person.interfaces.Person;
 
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+
 /**
  * Created by Сергей on 15.04.2017.
  */
 @XmlType(propOrder = {  "firstName",
                         "lastName",
                         "email",
-                        "phoneNumber",
+                        "phone",
                         "infoAboutWork"}, name = "Person")
 @XmlRootElement
-public class PersonDao implements Person {
+public class PersonDao implements Person,Serializable {
     private String firstName;
     private String lastName;
     private String email;
-    private String phoneNumber;
+    private String phone;
     private InfoAboutWorkDao infoAboutWorkDao;
 
     @Override
@@ -38,7 +40,7 @@ public class PersonDao implements Person {
 
     @Override
     public String getNumberPhone() {
-        return phoneNumber;
+        return phone;
     }
 
     @Override
@@ -63,7 +65,7 @@ public class PersonDao implements Person {
 
     @Override
     public void setNumberPhone(String numberPhone) {
-        this.phoneNumber = numberPhone;
+        this.phone = numberPhone;
     }
 
     @Override

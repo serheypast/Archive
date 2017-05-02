@@ -1,5 +1,6 @@
 package by.bsuir.models.request.implementations;
 
+import by.bsuir.models.enumKinds.eRequest.ERequest;
 import by.bsuir.models.request.interfaces.Request;
 
 import java.io.Serializable;
@@ -8,17 +9,19 @@ import java.io.Serializable;
  * Created by Сергей on 15.04.2017.
  */
 public class ClientRequest implements Request,Serializable {
-    private String nameOfRequest;
+    /**Kind of Request from client*/
+    private ERequest nameOfRequest;
 
+    /**Xml doc as a string*/
     private String xmlParseDoc;
 
     @Override
-    public String getNameOfRequest() {
+    public ERequest getNameOfRequest() {
         return nameOfRequest;
     }
 
     @Override
-    public void setNameOfRequest(String nameOfRequest) {
+    public void setNameOfRequest(ERequest nameOfRequest) {
         this.nameOfRequest = nameOfRequest;
     }
 

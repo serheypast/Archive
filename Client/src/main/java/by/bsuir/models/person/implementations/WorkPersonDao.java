@@ -3,12 +3,13 @@ package by.bsuir.models.person.implementations;
 import by.bsuir.models.person.interfaces.InfoAboutWorkDao;
 
 import javax.xml.bind.annotation.XmlType;
+import java.io.Serializable;
 
 /**
  * Created by Сергей on 15.04.2017.
  */
 @XmlType(propOrder = { "company", "position", "experience", "salary" }, name = "infoAboutWork")
-public class WorkPersonDao implements InfoAboutWorkDao {
+public class WorkPersonDao implements InfoAboutWorkDao,Serializable {
     private String company;
     private String position;
     private int experience;

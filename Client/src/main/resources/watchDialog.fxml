@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="442.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.bsuir.gui.controllers.WatchDialogController">
+   <children>
+      <Label layoutX="35.0" layoutY="52.0" text="First name:" />
+      <Label fx:id="firstName" layoutX="155.0" layoutY="52.0" prefHeight="17.0" prefWidth="223.0" text="Name">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="85.0" text="Last name:" />
+      <Label fx:id="lastName" layoutX="155.0" layoutY="85.0" prefHeight="17.0" prefWidth="223.0" text="LName">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="119.0" text="E-Mail:" />
+      <Label fx:id="email" layoutX="155.0" layoutY="119.0" prefHeight="17.0" prefWidth="223.0" text="Email">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="154.0" text="Phone:" />
+      <Label fx:id="phoneNumber" layoutX="155.0" layoutY="154.0" prefHeight="17.0" prefWidth="223.0" text="phone">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="185.0" text="Company:" />
+      <Label fx:id="company" layoutX="155.0" layoutY="185.0" prefHeight="17.0" prefWidth="223.0" text="Company">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="217.0" text="Position:" />
+      <Label fx:id="position" layoutX="155.0" layoutY="217.0" prefHeight="17.0" prefWidth="223.0" text="position">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="248.0" text="Experience:" />
+      <Label fx:id="experience" layoutX="155.0" layoutY="248.0" prefHeight="17.0" prefWidth="223.0" text="Expirience">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="280.0" text="Salary:" />
+      <Label fx:id="salary" layoutX="155.0" layoutY="280.0" prefHeight="17.0" prefWidth="223.0" text="Salary">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="81.0" layoutY="14.0" prefHeight="28.0" prefWidth="178.0" text="Info about person">
+         <font>
+            <Font name="Franklin Gothic Medium" size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
